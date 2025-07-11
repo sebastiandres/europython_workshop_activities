@@ -1,3 +1,6 @@
+# Specific files
+1_visualization/*_solution.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
