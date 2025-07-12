@@ -1,5 +1,8 @@
 # Specific files
+1_visualization/*/*_solution.py
 1_visualization/*_solution.py
+venv/
+*/venv/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
