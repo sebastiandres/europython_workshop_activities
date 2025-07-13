@@ -23,31 +23,30 @@ print("")
 
 # Preprocess the data
 ## Rename column Years
-df_all = df_all.rename(columns={"Years":"Year"})
+#df_all = df_all.rename(...)
 
 ## Convert Years and Value to numeric
-df_all["Year"] = pd.to_numeric(df_all["Year"], errors="coerce")
-df_all["Value"] = pd.to_numeric(df_all["Value"], errors="coerce")
+#df_all["Year"] = 
+#df_all["Value"] = 
 
 ## Select the country Czechia
 df = df_all[df_all["Territory"] == "Czechia"]
 
 ## Add a simpler "source" column for each type of energy
-source = df["Indicator"].str.split(" - ").str[1]
-df["Source"] = source.str.split(" ").str[0]
+#df["source"] = 
 
 ## All columns in lowercase
-df.columns = df.columns.str.lower()
+#df.columns = df.columns.str.lower()
 
 ## Sort the data by indicator, and by year
-df = df.sort_values(by=["source", "year"])
+#df = 
 
 # Save
-output_columns = ["territory", "indicator", "source", "year", "value"]
-output_df = df[output_columns]
+#output_columns = ["territory", "indicator", "source", "year", "value"]
+output_df = df #df[output_columns]
 
 ## Save the sorted data
-output_csv_filepath = os.path.join("data", "gross_energy_production_sorted_solution.csv")
+output_csv_filepath = os.path.join("data", "gross_energy_production_sorted.csv")
 output_df.to_csv(output_csv_filepath, index=False)
 
 # Some printing

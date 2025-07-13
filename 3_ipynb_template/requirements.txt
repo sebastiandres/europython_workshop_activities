@@ -1,3 +1,5 @@
+jupyter 
+notebook
 rise
 pandas
 matplotlib
