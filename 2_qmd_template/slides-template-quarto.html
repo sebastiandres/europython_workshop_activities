@@ -7,7 +7,9 @@
 <link href="my-slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="my-slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="my-slides_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="my-slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="my-slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="my-slides_files/libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="my-slides_files/libs/quarto-contrib/videojs/video-js.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.554">
 
   <title>my-slides</title>
@@ -546,7 +548,7 @@
   }
 
   // Store cell data
-  globalThis.qpyodideCellDetails = [{"code":"def fib(a,b):\n  return a+b\n\nx = fib(2,2)\nprint(x)","options":{"output":"true","read-only":"false","dpi":72,"fig-cap":"","out-width":"700px","comment":"","warning":"true","message":"true","fig-width":7,"autorun":"","out-height":"","classes":"","fig-height":5,"context":"interactive","label":"","results":"markup"},"id":1}];
+  globalThis.qpyodideCellDetails = [{"options":{"autorun":"","comment":"","label":"","read-only":"false","dpi":72,"message":"true","results":"markup","warning":"true","context":"interactive","fig-cap":"","fig-height":5,"out-height":"","classes":"","fig-width":7,"output":"true","out-width":"700px"},"id":1,"code":"def fib(a,b):\n  return a+b\n\nx = fib(2,2)\nprint(x)"}];
 
 
   </script>
@@ -760,10 +762,6 @@
 </section>
 <section id="section" class="slide level2 custom-title center">
 <h2></h2>
-<p>This shows the .custom-title class defined on style/style_background.scss. Any personalization should be applied directly there.</p>
-</section>
-<section id="section-1" class="slide level2 custom-title center">
-<h2></h2>
 <div style="position: absolute; left: 700px; top: 550px; width:2000px; background-color: #ffffff; padding: 10px; border-radius: 5px;">
 <p><span style="font-size: 20px; margin: 0px;">Some title</span> <br> <span style="font-size: 25px;">Some author</span></p>
 </div>
@@ -783,6 +781,7 @@
 </section>
 <section id="requirements-for-conference-slides" class="slide level2 center">
 <h2>Requirements for conference slides</h2>
+<div style="font-size: 0.8em;">
 <ol type="1">
 <li>Slide theme &amp; transitions</li>
 <li>Slide creation</li>
@@ -795,6 +794,7 @@
 <li>Speaker notes</li>
 <li>Background customization</li>
 </ol>
+</div>
 </section>
 <section class="slide level2 center">
 
@@ -830,9 +830,9 @@
 <section id="text-customization-color-size-etc." class="slide level2 center">
 <h2>3. Text customization: color, size, etc.</h2>
 <p>Use markdown and standard html/css properties to customize text.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href=""></a><span class="co">[</span><span class="ot">Text</span><span class="co">]</span>{style="color: red"} can be <span class="co">[</span><span class="ot">personalized</span><span class="co">]</span>{style="font-size: 50px;"} </span>
-<span id="cb3-2"><a href=""></a>with standard html/css properties</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><span style="color: red">Text</span> can be <span style="font-size: 50px;">personalized</span> with standard html/css properties</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href=""></a>Text]{style="color: red"} can be <span class="co">[</span><span class="ot">personalized</span><span class="co">]</span>{style="font-size: 50px;"} </span>
+<span id="cb3-2"><a href=""></a>with standard **html** or *css* properties</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><span style="color: red">Text</span> can be <span style="font-size: 50px;">personalized</span> with standard <strong>html</strong> or <em>css</em> properties</p>
 </section>
 <section id="text-customization-color-size-etc.-1" class="slide level2 center">
 <h2>3. Text customization: color, size, etc.</h2>
@@ -868,7 +868,7 @@
 </section>
 <section id="control-on-text-alignment-horizontal" class="slide level2 center">
 <h2>4. Control on text alignment: horizontal</h2>
-<p>Use text-align to control the text horizontal alignment: left, center, right.</p>
+<p>Use text-align to control the text horizontal alignment: left, center, right. You must use the <code>:::</code> to create a div where to apply the style.</p>
 <div style="text-align: left">
 <p>This is a left-aligned text.</p>
 </div>
@@ -883,9 +883,24 @@
 <h2>4. Control on text alignment: vertical</h2>
 <p><br><br><br><br><br> I have not found a better way than just inserting a lot of line breaks: <code>&lt;br&gt;</code></p>
 </section>
-<section id="images-videos" class="slide level2 center">
-<h2>5. Images &amp; videos</h2>
-<p>Use markdown to insert images and videos.</p>
+<section id="images" class="slide level2 center">
+<h2>5. Images</h2>
+<pre><code>![](images/example_image.png)</code></pre>
+<p><img data-src="images/example_image.png"></p>
+</section>
+<section id="images-centered" class="slide level2 center">
+<h2>5. Images centered</h2>
+<pre><code>![](images/example_image.png){fig-align="center"}</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/example_image.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</section>
+<section id="videos" class="slide level2 center">
+<h2>5. Videos</h2>
+<pre><code></code></pre>
+<video id="video_shortcode_videojs_video2" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="videos/example_video.mp4"></video>
 </section>
 <section id="columns" class="slide level2 center">
 <h2>6. Columns</h2>
@@ -930,23 +945,23 @@
 <h2><code>python</code></h2>
 <p>Just a regular block of markdown, highlighted with python syntax.<br>
 The code must be wrapped between <strong>```python</strong> and <strong>```</strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="kw">def</span> fib(a,b):</span>
-<span id="cb4-2"><a href=""></a>  <span class="cf">return</span> a<span class="op">+</span>b</span>
-<span id="cb4-3"><a href=""></a></span>
-<span id="cb4-4"><a href=""></a>x <span class="op">=</span> fib(<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb4-5"><a href=""></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="kw">def</span> fib(a,b):</span>
+<span id="cb7-2"><a href=""></a>  <span class="cf">return</span> a<span class="op">+</span>b</span>
+<span id="cb7-3"><a href=""></a></span>
+<span id="cb7-4"><a href=""></a>x <span class="op">=</span> fib(<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb7-5"><a href=""></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It is not executed. It might contain errors!</p>
 </section>
 <section id="python-1" class="slide level2 center">
 <h2><code>{python}</code></h2>
 <p>Executes the code when rendering on a python environment, and shows the results.<br>
 The code must be wrapped between <strong>```{python}</strong> and <strong>```</strong></p>
-<div id="cd269351" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="kw">def</span> fib(a,b):</span>
-<span id="cb5-2"><a href=""></a>  <span class="cf">return</span> a<span class="op">+</span>b</span>
-<span id="cb5-3"><a href=""></a></span>
-<span id="cb5-4"><a href=""></a>x <span class="op">=</span> fib(<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb5-5"><a href=""></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1c6746d3" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="kw">def</span> fib(a,b):</span>
+<span id="cb8-2"><a href=""></a>  <span class="cf">return</span> a<span class="op">+</span>b</span>
+<span id="cb8-3"><a href=""></a></span>
+<span id="cb8-4"><a href=""></a>x <span class="op">=</span> fib(<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb8-5"><a href=""></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>4</code></pre>
 </div>
@@ -966,10 +981,10 @@ It must be wrapped between <strong>```{pyodide-python}</strong> and <strong>```<
 <section id="pyodide-considerations" class="slide level2 center">
 <h2>pyodide considerations</h2>
 <p>Must add 2 lines to the yaml header:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href=""></a><span class="fu">filters</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb7-2"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> pyodide</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href=""></a><span class="fu">filters</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb10-2"><a href=""></a><span class="at">  </span><span class="kw">-</span><span class="at"> pyodide</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>And must install with quarto:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href=""></a><span class="ex">quarto</span> add coatless-quarto/pyodide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="ex">quarto</span> add coatless-quarto/pyodide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It’s great to demo a library or function, and change some parameters while presenting.</p>
 <p>It’st not a programming environment: large blocks or codes or complex libraries might break.</p>
 </section>
@@ -981,20 +996,20 @@ It must be wrapped between <strong>```{pyodide-python}</strong> and <strong>```<
 <h2>10. Background customization</h2>
 <p>You can customize the background of the slides, using regular html/css.</p>
 <p>Example:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb9-2"><a href=""></a><span class="fu">.slide-background-content</span> {</span>
-<span id="cb9-3"><a href=""></a>    <span class="kw">background-image</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
-<span id="cb9-4"><a href=""></a>    <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#AA0000</span> <span class="at">!important</span><span class="op">;</span></span>
-<span id="cb9-5"><a href=""></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span>   </span>
-<span id="cb9-6"><a href=""></a>    }</span>
-<span id="cb9-7"><a href=""></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb12-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb12-2"><a href=""></a><span class="fu">.slide-background-content</span> {</span>
+<span id="cb12-3"><a href=""></a>    <span class="kw">background-image</span><span class="ch">:</span> <span class="dv">none</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb12-4"><a href=""></a>    <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#AA0000</span> <span class="at">!important</span><span class="op">;</span></span>
+<span id="cb12-5"><a href=""></a>    <span class="kw">color</span><span class="ch">:</span> <span class="cn">white</span> <span class="at">!important</span><span class="op">;</span>   </span>
+<span id="cb12-6"><a href=""></a>    }</span>
+<span id="cb12-7"><a href=""></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="background-customization-1" class="slide level2 center">
 <h2>10. Background customization</h2>
 <p>This can be conveniently done in a css file, loaded into the yaml header, used when needed on a particular slide.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href=""></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
-<span id="cb10-2"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> simple</span></span>
-<span id="cb10-3"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> style/style_background.scss</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href=""></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span></span>
+<span id="cb13-2"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> simple</span></span>
+<span id="cb13-3"><a href=""></a><span class="at">        </span><span class="kw">-</span><span class="at"> style/style_background.scss</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
@@ -1923,6 +1938,8 @@ It must be wrapped between <strong>```{pyodide-python}</strong> and <strong>```<
         }
       );
     </script>
+    <script>videojs(video_shortcode_videojs_video1);</script>
+    <script>videojs(video_shortcode_videojs_video2);</script>
     
 
 </body></html>
