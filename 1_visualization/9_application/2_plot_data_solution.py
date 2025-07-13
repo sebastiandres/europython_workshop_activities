@@ -34,7 +34,6 @@ plt.subplots_adjust(top=0.75)
 # Add the format to be multiples of 10,000
 ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, pos: f"{x:,.0f}"))
 
-
 # Set the x-axis limits
 ax.set_xlim(x_min_value, x_max_value)
 fig.text(0.5, 0.025, "Years", ha="center", va="bottom")
@@ -44,6 +43,12 @@ fig.text(0.02, 0.725, "Energy [GWh]", ha="left", va="center")
 # Remove the top and right spines
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
+
+# Save an empty plot
+i = 0
+figname_path = f"02_gross_energy_production_solution_{i}.png"
+plt.savefig(figname_path)
+
 
 # Save
 source_groups = [ ["wind"], ["solar", "hydro"], ["nuclear"], ["thermal"]]
@@ -57,7 +62,7 @@ plot_properties = {
 highlight_properties = [ { "color": plot_properties[key]["color"], "weight": "bold"} for key in plot_properties.keys() ]
 
 # Plot the data
-for i, source_group in enumerate(source_groups):
+for j, source_group in enumerate(source_groups):
     for source in source_group:
         color = plot_properties[source]["color"]
         df_source = df[df["source"]==source]
@@ -65,6 +70,7 @@ for i, source_group in enumerate(source_groups):
         x_text = df_source["year"].values[-1]
         y_text = df_source["value"].values[-1]
         ax.text(x_text, y_text, source, **plot_properties[source])
+    i = j+1
     figname_path = f"02_gross_energy_production_solution_{i}.png"
     plt.savefig(figname_path)
 
@@ -95,7 +101,6 @@ fig_text(
   va="top",
   highlight_textprops=highlight_properties
 )
-
 
 # Show the plot
 i+=1
