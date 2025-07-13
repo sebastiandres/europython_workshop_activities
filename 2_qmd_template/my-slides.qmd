@@ -103,7 +103,7 @@ This is a very important content...
 Use markdown and standard html/css properties to customize text.
 
 ```markdown
-Text]{style="color: red"} can be [personalized]{style="font-size: 50px;"} 
+[Text]{style="color: red"} can be [personalized]{style="font-size: 50px;"} 
 with standard **html** or *css* properties
 ```
 
