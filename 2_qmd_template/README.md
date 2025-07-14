@@ -1,12 +1,14 @@
 # Quarto Slides Template
 
-While prepararing my slides for my [talk at Pycon US 2024](https://sebastiandres.github.io/talk_2024_05_pycon_us), I learned some tricks to customize quarto. This repository contains some notes so my future-self won't bang his head on the wall (again) - hopefully it can also help someone else. 
+## Installation
 
-This is a rought first template - help me improve it!
+Install quarto using the instructions on the [official documentation](https://quarto.org/docs/get-started/).
 
-## How it looks
-* [Slides (html, interactive)](https://sebastiandres.github.io/quarto_slides_template/my-slides.html)
-* [Slides (pdf, non interactive)](https://sebastiandres.github.io/quarto_slides_template/my-slides.pdf)
+Install the pyodide extension:
+
+```bash
+quarto add coatless-quarto/pyodide
+```
 
 ## Official documentation
 The official documentation is:
@@ -15,12 +17,7 @@ The official documentation is:
 * [https://quarto.org/docs/presentations/revealjs/advanced.html ](Advanced reveal)
 * [https://quarto.org/docs/presentations/revealjs/themes.html ](Reveal themes)
 
-Make sure to have read and understood those pages before using these advices.
-
 ## Personalizations
-
-### Updating the filename
-Make sure to update the Makefile if you change the quarto markdown filename from my-slides.qmd to something else. I prefer using a Makefile because my-slides.qmd, my-slides.html and my-slides.pdf are too similar and do not allow for proper tab completion on the terminal (Yes, I am THAT lazy).
 
 ### Updating the theme and transition
 For the transitions, choose from: none, fade, slide, convex, concave, zoom
@@ -29,9 +26,6 @@ For the theme, choose from: simple, black, beige, blood, dark, default, league, 
 
 Personally, I think that fade and simple are the best combination.
 
-### Updating the images and screen size
-Screen size is set by the variables height and width on my-slides.qmd 
-Change the images for the images you need 
 
 ## html and pdf Outputs
 

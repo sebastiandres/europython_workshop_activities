@@ -1,8 +1,16 @@
 # Talk template
 
-Template para github para crear nuevas charlas y presentaciones. 
-Tiene la estructura definida para MIS charlas.
+Jupyter notebook template for presentations
 
-No es necesario clonar. Al crear un nuevo repositorio, usar "template" y seleccionar "talk_template".
+## Installation
 
-Ejemplo funcionando: [links.html](https://sebastiandres.github.io/talk_template/)
+Install Python and the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Documentation
+
+The documentation is available in the [official documentation](https://rise.readthedocs.io/en/stable/).
+
