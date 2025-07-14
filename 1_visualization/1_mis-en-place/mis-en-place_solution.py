@@ -1,13 +1,15 @@
 """
-Mixed Bag of Tricks:
-- Avoid the plot bounding box: splines
-- Ticks: how to control them
+Mis-en-place:
+- Clean your data before plotting. 
+- Have everything ready before plotting.
 
-TODO:
-1. Remove top and right splines (ax.spines)
-2. Remove the ticks on the left (ax.tick_params)
+TO-DO LIST:
+1. Change the vertical bars to horizontal bars.
+2. Sort the bars decreasingly by value.
+3. Use a different color for the second bar.
 
-Data: Some random data
+Data: Czechia Gross Energy Production by source (2023) in GWh
+Data origin: https://csu.gov.cz/energy?pocet=10&start=0&skupiny=39&razeni=-datumVydani
 """
 
 import matplotlib.pyplot as plt
@@ -34,6 +36,6 @@ ax.set_title("Czechia Gross Energy Production by source (2023)")
 ax.set_xlabel("Value (GWh)")
 
 # Save the figure
-figname = "mixed_bag_exercise.png"
+figname = "mis-en-place_solution.png"
 plt.savefig(figname)
 print(f"open {figname}")
